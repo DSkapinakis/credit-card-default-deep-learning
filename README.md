@@ -1,13 +1,10 @@
-<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/3e67cbe4-66bc-42a4-bc9f-508199897f61" width="420" height="480" alt="Image">
 
-<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/61d5900c-e21d-4354-9078-33183f2a331a" width="570" height="480" alt="Image">
+<div align="center"> <img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/3e67cbe4-66bc-42a4-bc9f-508199897f61" width="500" height="500" alt="Image" justify-content: center> </div>
 
 
 # A Comparative Analysis of Deep Learning Sequential Models for Temporal Feature Extraction in Credit Card Default Prediction
 
-
 Developed as an MSc dissertation for the program "Business Analytics: Operational Research and Risk Analysis" at the Alliance Manchester Business School.
-
 
 # Abstract
 The surge in credit card transactional data compels financial institutions to develop accurate credit scoring models capable of identifying potential defaults. Proper feature engineering of data is essential for such models to perform well, a process that is often time-consuming and requires a high level of human expertise. Deep Learning (DL) has received significant attention for its ability to automatically extract high-level representations from raw data, thus reducing human intervention and, by extension, bias. Due to the temporal nature of transactional data, researchers have developed several sequential DL models capable of extracting inherent temporal dependencies and accurately predicting default cases. Most applications concern the ‘Taiwan’ dataset, a credit card dataset that includes both static and temporal customer features. Despite the numerous studies, each researcher employs a single DL model for temporal feature extraction and adopts a unique approach regarding the modelling pipeline, the inclusion or not of static features, and the final classification layer. This variation in approaches makes the different studies incomparable, highlighting the absence of a comprehensive assessment of the sequential DL model that yields the highest classification scores. This study aims to cover this gap by assessing three popular sequential DL models ‒ Recurrent Neural Network (RNN), Long-Short Term Memory Network (LSTM), and Convolutional Neural Network (CNN) ‒ across eight stages, using a consistent modelling pipeline. Each stage combines different final classification layers ‒ Dense, Logistic Regression, Random Forest, XGBoost ‒ with inclusion or not of static features. After performing hyperparameter tuning for each unique sequential DL model, F1 score was the main metric utilized for the final evaluations, revealing LSTM’s superiority in 6 out of 8 stages. RNN came second with 3 appearances as a top performer and CNN followed with 2. This study will guide financial institutions in adopting advanced DL approaches for credit scoring.
