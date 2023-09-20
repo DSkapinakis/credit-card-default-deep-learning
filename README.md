@@ -1,3 +1,8 @@
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/3e67cbe4-66bc-42a4-bc9f-508199897f61" width="420" height="480" alt="Image">
+
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/61d5900c-e21d-4354-9078-33183f2a331a" width="570" height="480" alt="Image">
+
+
 # A Comparative Analysis of Deep Learning Sequential Models for Temporal Feature Extraction in Credit Card Default Prediction
 
 
