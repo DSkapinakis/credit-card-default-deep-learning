@@ -32,7 +32,7 @@ Three popular Deep Learning (DL) models (RNN, LSTM, CNN) were developed using va
  
 # Research Design
 
-The graphs below demonstrate the 8 stages in which the DL models were compared. The stages consist of the use of different final classification layers, namely a dense layer, logistic regression, random forest and XGBoost, and whether or not static features are included together with the temporal ones. The optimal Temporal Feature Extractor (TFE) will be the one which consistently demonstrates superior performance across the majority of stages. 3 DL models for each of the 8 stages, makes 24 different models in total, each of which was tuned regarding architecture, optimizer, learning rate and batch size. 
+The graphs below demonstrate the 8 stages in which the DL models were compared. The stages consist of the use of different final classification layers, namely a dense layer, logistic regression, random forest and XGBoost, and whether or not static features are included together with the temporal ones. The optimal Temporal Feature Extractor (TFE) will be the one which consistently demonstrates superior performance across the majority of stages. Each model undergone rigorous hyperparameter tuning, before the final assessment, regarding architecture, optimizer, learning rate and batch size.
 
 ![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/a21fc75b-6071-4cc7-9f54-fb94a79e70ae)
 
