@@ -7,7 +7,7 @@
 Developed as an MSc dissertation for the program "Business Analytics: Operational Research and Risk Analysis" at the Alliance Manchester Business School.
 
 # Abstract
-The surge in credit card transactional data compels financial institutions to develop accurate credit scoring models capable of identifying potential defaults. Proper feature engineering of data is essential for such models to perform well, a process that is often time-consuming and requires a high level of human expertise. Deep Learning (DL) has received significant attention for its ability to automatically extract high-level representations from raw data, thus reducing human intervention and, by extension, bias. Due to the temporal nature of transactional data, researchers have developed several sequential DL models capable of extracting inherent temporal dependencies and accurately predicting default cases. Most applications concern the ‘Taiwan’ dataset, a credit card dataset that includes both static and temporal customer features. Despite the numerous studies, each researcher employs a single DL model for temporal feature extraction and adopts a unique approach regarding the modelling pipeline, the inclusion or not of static features, and the final classification layer. This variation in approaches makes the different studies incomparable, highlighting the absence of a comprehensive assessment of the sequential DL model that yields the highest classification scores. This study aims to cover this gap by assessing three popular sequential DL models ‒ Recurrent Neural Network (RNN), Long-Short Term Memory Network (LSTM), and Convolutional Neural Network (CNN) ‒ across eight stages, using a consistent modelling pipeline. Each stage combines different final classification layers ‒ Dense, Logistic Regression, Random Forest, XGBoost ‒ with inclusion or not of static features. After performing hyperparameter tuning for each unique sequential DL model, F1 score was the main metric utilized for the final evaluations, revealing LSTM’s superiority in 6 out of 8 stages. RNN came second with 3 appearances as a top performer and CNN followed with 2. This study will guide financial institutions in adopting advanced DL approaches for credit scoring.
+Three popular Deep Learning (DL) models (RNN, LSTM, CNN) were developed using various experimental setups, consisting of different final classification layers and input features. The purpose of this study was to discover the best performing DL model that extracts the dynamic characteristics of raw transactional data and is able to predict credit card default without the need for feature engineering. The LSTM model outperformed the other two, showing remarkable ability in identifying both defaulters and non-defaulters. This breakthrough, leveraging AI, has the potential to save financial institutions significant amounts of money by improving their credit risk assessment processes.
 
 **Keywords:** Machine Learning, Deep Learning, Temporal Feature Extraction, Credit Card Default 
 
@@ -31,7 +31,8 @@ The surge in credit card transactional data compels financial institutions to de
 <img src="https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/75c6a38d-06b9-4b1d-a38f-a5f8f814ca85" width="600" height="600" alt="Image Description">
  
 # Research Design
-To determine the most powerful DL model, among the most popular ones, for temporal feature extraction in the Taiwan dataset, the three investigated models will be assessed across eight stages, ensuring a comprehensive and robust evaluation. The stages were derived by utilizing either temporal only or static and temporal input features (IF), and by performing the final classification with either a dense layer or a conventional ML model. The temporal feature extractor (TFE) that consistently demonstrates superior performance across the majority of stages will be chosen as the optimal one. Following the exploratory data analysis (EDA), the final results will be produced for the optimized versions (hyperparameter tuning) of all 24 models (3x8 stages). The figures below depict the research design pipeline and the composition of the eight IF + FCL (Final Classification Layer) stages.
+
+The graphs below demonstrate the 8 stages in which the DL models were compared. The stages consist of the use of different final classification layers, namely a dense layer, logistic regression, random forest and XGBoost, and whether or not static features are included together with the temporal ones. The optimal Temporal Feature Extractor (TFE) will be the one which consistently demonstrates superior performance across the majority of stages. 3 DL models for each of the 8 stages, makes 24 different models in total, each of which was tuned regarding architecture, optimizer, learning rate and batch size. 
 
 ![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/a21fc75b-6071-4cc7-9f54-fb94a79e70ae)
 
@@ -45,13 +46,13 @@ The folder _python code_ in this github repository contains 3 files, namely:
 
 # Additional folders/files in this repository
 -  _data_: folder containing the dataset
--  _elbow plots - tuning_: Excel files containing F1 scores for each architecture tested in the first tuning phase (architecture tuning). Those files are called in _hyperparameter_tuning.py_ to plot elbow curves and select the     architecture that yields the highest F1 score with the lowest possible complexity. The selected optimal architectures were then tuned further (second tuning phase) regarding different optimizer, learning rates, batch sizes.
--  _technical_graphs_: pdf file containing some graphs/visualizations regarding the modelling pipeline and the different experimental setups used in this study. Also, visualizations are given to better understand how the 3         sequential DL models work. 
+-  _elbow plots - tuning_: Excel files containing F1 scores for each architecture tested in the first tuning phase (architecture tuning). Those files are called in _hyperparameter_tuning.py_ to plot elbow curves and select the architecture that yields the highest F1 score with the lowest possible complexity. The selected optimal architectures were then tuned further (second tuning phase) regarding different optimizer, learning rates, batch sizes.
+-  _technical_graphs_: pdf file containing some graphs/visualizations regarding the modelling pipeline and the different experimental setups used in this study. Also, visualizations are given to better understand how the 3 sequential DL models work. 
 
 # Results 
 
 ## Hyperparameter tuning - optimal configurations
-The table below demonstrates the final configurations of the 24 models across the 8 IF + FCL stages, alongside the mean F1 scores and standard deviations obtained through the 5-fold cross validation. Regardless of the input features, LSTM models with a dense layer or with LR as a final classifier, achieved the highest mean F1 scores (the appendix mentioned is only available in the dissertation file).
+The table presented below showcases the final configurations of 24 models spanning across 8 IF + FCL stages. Accompanying this information are the mean F1 scores and standard deviations derived from the 5-fold cross-validation procedure. It is noteworthy that, irrespective of the chosen input features, LSTM models, whether integrated with a dense layer or LR as the final classifier, consistently demonstrated superior performance in terms of mean F1 scores (the appendix mentioned is not available in this repository).
 
 ![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/29e2bc51-93f9-4827-b064-c65350c8768d)
 
@@ -66,8 +67,11 @@ Below, a summarization of the optimal configurations occured after tuning for ea
 <img src="https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/049b7e55-c352-45cf-9e68-6c0c6aa21d37" width="600" height="400" alt="CNN Image">
 
 ## Final Classification results for all TFEs in each IF + FCL stage
-As seen below, the RNN demonstrated its superiority in 3 out of 8 stages (stages 3, 4, 5), the LSTM in 6 out of 8 (stages 1, 2, 4, 5, 6, 7) and the CNN in 2 out of 8 stages (stages 6, 8). As an additional observation, the highest F1 scores obtained (0.481, 0.482, 0.488) across all 24 configurations, encompass LSTM as the TFE. Lastly, it should be noted that the models with RF and XGB (stages 3, 4, 7, 8) as FCL clearly overfit. However, this behavior is consistent across all 3 TFEs in these stages, implying that this behavior does not negatively impact the comparison between them.
-Regardless of the input features or the final classification layer, LSTM keeps on being a top performer in the majority of cases, providing robustness in the final comparison. 
+As observed below, the RNN demonstrated its superior performance in 3 out of 8 stages (specifically, stages 3, 4, and 5), while the LSTM outperformed the others in 6 out of 8 stages (namely, stages 1, 2, 4, 5, 6, and 7). The CNN exhibited its strength in 2 out of 8 stages (specifically, stages 6 and 8). It's worth noting that the highest F1 scores achieved (0.481, 0.482, 0.488) were consistently associated with LSTM as the TFE.
+
+Additionally, it's important to highlight that models employing RF and XGB (in stages 3, 4, 7, and 8) as the final classification layer tended to exhibit signs of overfitting. However, this pattern was consistent across all three TFEs in these stages, suggesting that it did not adversely impact the comparative analysis between them.
+
+In conclusion, irrespective of the input features or the final classification layer chosen, LSTM consistently emerged as a top-performing model in the majority of cases, demonstrating its robustness in our final comparison.
 
 ![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/3c503f07-42aa-4074-8510-4b89a2541082)
 
