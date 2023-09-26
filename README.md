@@ -25,6 +25,17 @@ Three popular Deep Learning (DL) models (RNN, LSTM, CNN) were developed using va
 - **Machine Learning Models - Preprocessing:** `scikit-learn`, `xgboost`
 - **Deep Learning Models:** `tensorflow`, `keras`
 
+## Code structure
+The folder _python code_ in this github repository contains 3 files, namely:
+-  _EDA.ipynb_: jupyter notebook with all the exploratory data analysis (EDA) plots of the project
+-  _hyperparameter_tuning.py_: python file including the whole tuning process for all 24 models developed in this study (architecture tuning + optimizer, learning rate, batch size tuning - see _elbow plots - tuning_ below)
+-  _results_on_test_set_optimal_conf.py_: python file including the optimal configurations derived after tuning, and the final results on the test set
+
+## Additional folders/files in this repository
+-  _data_: folder containing the dataset
+-  _elbow plots - tuning_: Excel files containing F1 scores for each architecture tested in the first tuning phase (architecture tuning). Those files are called in _hyperparameter_tuning.py_ to plot elbow curves and select the architecture that yields the highest F1 score with the lowest possible complexity. The selected optimal architectures were then tuned further (second tuning phase) regarding different optimizer, learning rates, batch sizes.
+-  _technical_graphs_: pdf file containing some graphs/visualizations regarding the modelling pipeline and the different experimental setups used in this study. Also, visualizations are given to better understand how the 3 sequential DL models work. 
+
 # Data
 `default_of_credit_card_clients.xls`: dataset obtained from the UCI Machine Learning Repository (Yeh, 2016) and contains information about customers’ credit card payment history from a Taiwanese bank. Available in: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
 
@@ -37,17 +48,6 @@ The graphs below demonstrate the 8 stages in which the DL models were compared. 
 ![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/a21fc75b-6071-4cc7-9f54-fb94a79e70ae)
 
 ![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/11e62d74-2ba8-4c03-894a-2360e44d30ad)
-
-# Code structure
-The folder _python code_ in this github repository contains 3 files, namely:
--  _EDA.ipynb_: jupyter notebook with all the exploratory data analysis (EDA) plots of the project
--  _hyperparameter_tuning.py_: python file including the whole tuning process for all 24 models developed in this study (architecture tuning + optimizer, learning rate, batch size tuning - see _elbow plots - tuning_ below)
--  _results_on_test_set_optimal_conf.py_: python file including the optimal configurations derived after tuning, and the final results on the test set
-
-# Additional folders/files in this repository
--  _data_: folder containing the dataset
--  _elbow plots - tuning_: Excel files containing F1 scores for each architecture tested in the first tuning phase (architecture tuning). Those files are called in _hyperparameter_tuning.py_ to plot elbow curves and select the architecture that yields the highest F1 score with the lowest possible complexity. The selected optimal architectures were then tuned further (second tuning phase) regarding different optimizer, learning rates, batch sizes.
--  _technical_graphs_: pdf file containing some graphs/visualizations regarding the modelling pipeline and the different experimental setups used in this study. Also, visualizations are given to better understand how the 3 sequential DL models work. 
 
 # Results 
 
