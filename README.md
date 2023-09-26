@@ -66,7 +66,7 @@ Below, a summarization of the optimal configurations occured after tuning for ea
 ### CNN
 <img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/da55178b-dd73-4c4f-a766-4b4313ab566b" width="600" height="400" alt="CNN Image">
 
-## Final Classification results for all TFEs in each IF + FCL stage
+## Final Classification Results for all TFEs in each IF + FCL stage
 As observed below, the RNN demonstrated its superior performance in 3 out of 8 stages (specifically, stages 3, 4, and 5), while the LSTM outperformed the others in 6 out of 8 stages (namely, stages 1, 2, 4, 5, 6, and 7). The CNN exhibited its strength in 2 out of 8 stages (specifically, stages 6 and 8). It's worth noting that the highest F1 scores achieved (0.481, 0.482, 0.488) were consistently associated with LSTM as the TFE.
 
 Additionally, it is important to highlight that models employing RF and XGB (in stages 3, 4, 7, and 8) as the final classification layer tended to exhibit signs of overfitting. However, this pattern was consistent across all three TFEs in these stages, suggesting that it did not adversely impact the comparative analysis between them.
