@@ -39,32 +39,32 @@ The folder _python code_ in this github repository contains 3 files, namely:
 # Data
 `default_of_credit_card_clients.xls`: dataset obtained from the UCI Machine Learning Repository (Yeh, 2016) and contains information about customers’ credit card payment history from a Taiwanese bank. Available in: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
 
-<img src="https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/75c6a38d-06b9-4b1d-a38f-a5f8f814ca85" width="600" height="600" alt="Image Description">
- 
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/f3a4b75b-6174-4365-afcb-330aac1c8deb" width="600" height="600" alt="Image Description">
+
 # Research Design
 
 The graphs below demonstrate the 8 stages in which the DL models were compared. The stages consist of the use of different final classification layers, namely a dense layer, logistic regression, random forest and XGBoost, and whether or not static features are included together with the temporal ones. The optimal Temporal Feature Extractor (TFE) will be the one which consistently demonstrates superior performance across the majority of stages. Each model undergone rigorous hyperparameter tuning, before the final assessment, regarding architecture, optimizer, learning rate and batch size.
 
-![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/a21fc75b-6071-4cc7-9f54-fb94a79e70ae)
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/35598d1d-dc54-4f90-9b89-7aaac5fb0e5a" width="850" height="230" alt="Image Description">
 
-![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/11e62d74-2ba8-4c03-894a-2360e44d30ad)
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/66007b83-3536-4549-a0a5-6b8a380ba490" width="850" height="1000" alt="Image Description">
 
 # Results 
 
 ## Hyperparameter tuning - optimal configurations
 The table presented below showcases the final configurations of 24 models spanning across 8 IF + FCL stages. Accompanying this information are the mean F1 scores and standard deviations derived from the 5-fold cross-validation procedure. It is noteworthy that, irrespective of the chosen input features, LSTM models, whether integrated with a dense layer or LR as the final classifier, consistently demonstrated superior performance in terms of mean F1 scores (the appendix mentioned is not available in this repository).
 
-![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/29e2bc51-93f9-4827-b064-c65350c8768d)
+![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/0fedd2ab-37c7-4d47-9336-513c4c95a3ad)
 
 Below, a summarization of the optimal configurations occured after tuning for each DL model can be seen:
 ### RNN
-<img src="https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/fa899fae-98c7-46c5-9b85-c57c4fab24ea" width="600" height="400" alt="Image">
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/80805e3e-3361-438a-89bb-c481916be237" width="600" height="400" alt="Image">
 
 ### LSTM
-<img src="https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/387d9f32-efc8-43aa-b541-786162c0a704" width="600" height="400" alt="LSTM Image">
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/a2fb3253-23c3-47d2-8863-ca14739ba61d" width="600" height="400" alt="LSTM Image">
 
 ### CNN
-<img src="https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/049b7e55-c352-45cf-9e68-6c0c6aa21d37" width="600" height="400" alt="CNN Image">
+<img src="https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/da55178b-dd73-4c4f-a766-4b4313ab566b" width="600" height="400" alt="CNN Image">
 
 ## Final Classification results for all TFEs in each IF + FCL stage
 As observed below, the RNN demonstrated its superior performance in 3 out of 8 stages (specifically, stages 3, 4, and 5), while the LSTM outperformed the others in 6 out of 8 stages (namely, stages 1, 2, 4, 5, 6, and 7). The CNN exhibited its strength in 2 out of 8 stages (specifically, stages 6 and 8). It's worth noting that the highest F1 scores achieved (0.481, 0.482, 0.488) were consistently associated with LSTM as the TFE.
@@ -73,7 +73,7 @@ Additionally, it is important to highlight that models employing RF and XGB (in 
 
 In conclusion, irrespective of the input features or the final classification layer chosen, LSTM consistently emerged as a top-performing model in the majority of cases, demonstrating its robustness in the final comparison.
 
-![image](https://github.com/DSkapinakis/credit-card-default-prediction-ml/assets/136902596/3c503f07-42aa-4074-8510-4b89a2541082)
+![image](https://github.com/DSkapinakis/credit-card-default-deep-learning/assets/136902596/5fa2f51f-12ec-4e74-bae6-8e7c8910061e)
 
 
 
